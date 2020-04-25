@@ -1,0 +1,8 @@
+- name: Restart netdata
+  hosts: netdata-slaves
+  become: True
+  tasks:
+     - name: restart netdata
+       service: name=netdata state=restarted
+
+
