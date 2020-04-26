@@ -1,0 +1,11 @@
+
+[netdata]
+netdata-master
+prbf2-training
+prbf2-reserves
+prbf2-events
+nginx-proxy
+web-prbf2
+squad
+[netdata-one]
+prbf2-events

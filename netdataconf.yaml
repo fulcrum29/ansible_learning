@@ -1,0 +1,37 @@
+---
+- name: Push netdata config files to slaves
+  hosts: netdata-one
+  tasks:
+
+
+
+     - name: push copy of config file
+       become: true
+       become_method: sudo
+       copy: 
+         src: files/netdata.conf
+         dest: /etc/netdata/netdata.conf
+         owner: root
+         group: netdata
+
+
+     - name: push copy of stream config file
+       become: true
+       become_method: sudo
+       copy: 
+         src: files/stream.conf
+         dest: /etc/netdata/stream.conf
+         owner: root
+         group: netdata
+       notify:
+       - restart netdata
+    
+  handlers:
+    - name: restart netdata
+      service:
+        name: netdata
+        state: restarted
+       
+
+
+      
