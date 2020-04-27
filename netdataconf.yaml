@@ -1,6 +1,6 @@
 ---
 - name: Push netdata config files to slaves
-  hosts: netdata-one
+  hosts: netdata-slaves
   tasks:
 
 
