@@ -7,3 +7,6 @@ nginx-proxy
 web-prbf2
 squad
 prbf2-main
+
+[netdata-one]
+prbf2-main
