@@ -1,0 +1,21 @@
+---
+- name: Push config file
+  copy:
+    src: "{{ netconf_path }}"
+    dest: /etc/netdata/netdata.conf
+    owner: netdata
+    group: netdata
+    mode: '0644'
+        
+- name: Push stream config file
+  copy:
+    src: "{{ netstream_path }}" 
+    dest: /etc/netdata/stream.conf
+    owner: netdata
+    group: netdata
+    mode: '0644'
+
+- name: Restart netdata to apply configs
+  systemd:
+    name: netdata
+    state: restarted

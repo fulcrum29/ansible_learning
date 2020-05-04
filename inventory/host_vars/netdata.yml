@@ -1,0 +1,4 @@
+---
+netconf_path: /home/flanker/playbooks/roles/netdata/files/netdata-master.conf
+netstream_path: /home/flanker/playbooks/roles/netdata/files/netstream-master.conf
+

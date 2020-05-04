@@ -1,12 +1,11 @@
 
-[netdata-slaves]
-prbf2-training
+[eu1-netdata]
+netdata
 prbf2-reserves
 prbf2-events
 nginx-proxy
 web-prbf2
-squad
 prbf2-main
 
-[netdata-one]
-prbf2-main
+[eu2-netdata]
+ts3

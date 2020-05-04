@@ -1,0 +1,3 @@
+---
+netconf_path: netdata-slave.conf
+netstream_path: netstream-slave.conf

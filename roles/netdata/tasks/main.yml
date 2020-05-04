@@ -1,21 +1,18 @@
 ---
 # tasks file for common
-- name: Install netdata on slaves
-    hosts: netdata-one
-    become: yes   
-    become_method: sudo
+- name: Check wheteher netdata is installed if not install it
+  script: files/netinstall.sh
+  register: out
 
- 
-    tasks:
-    - name: Install netdata
-      script: netinstall.sh
-    
-    - name: Check wheter netdata is installed and running
-      systemd:
-        state: started
-        name: netdata
-    - name: Enable service to start at boot
-      systemd:
-        name: netdata
-        enabled: yes 
+- debug: var=out.stdout_lines    
+- name: Check whether netdata is and running
+  systemd:
+    state: started
+    name: netdata
+
+- name: Enable service to start at boot
+  systemd:
+    name: netdata
+    enabled: yes 
         
+- include: configure.yml

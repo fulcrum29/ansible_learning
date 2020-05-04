@@ -1,11 +1,7 @@
 ---
 - name: Install and configure netdata on eu1
   hosts: eu1-netdata
+  become: yes
+  become_method: sudo
   roles:
-    - netdata
-    
-
-- name: Install and configure netdata on eu2
-  hosts: eu2-netdata
-  roles:
-    - netdata
+    - netdata  
